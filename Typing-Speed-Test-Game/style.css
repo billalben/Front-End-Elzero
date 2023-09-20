@@ -1,0 +1,125 @@
+:root {
+  --main-color: #2196f3;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Cairo', sans-serif;
+}
+.game {
+  background-color: #eee;
+  min-height: 100vh;
+}
+.name {
+  background-color: var(--main-color);
+  color: white;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+.container {
+  margin: auto;
+  max-width: 900px;
+}
+.container .message {
+  background-color: white;
+  padding: 15px;
+  margin: 15px 0;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.container .message span {
+  font-weight: bold;
+  color: #009688;
+}
+.container .message span::before {
+  content: "[ ";
+}
+.container .message span::after {
+  content: " ]";
+}
+.container .start {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #009688;
+  padding: 20px;
+  cursor: pointer;
+}
+.container .the-word {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: var(--main-color);
+  user-select: none;
+}
+.container .input {
+  margin: 15px 0;
+  width: 100%;
+  display: block;
+  padding: 15px;
+  border: 3px solid var(--main-color);
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  caret-color: var(--main-color);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.container .input:focus {
+  outline: none;
+}
+.container .upcoming-words {
+  background-color: white;
+  margin: 15px 0;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .upcoming-words div {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.container .control {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px;
+}
+.container .control span {
+  font-weight: bold;
+  color: #009688;
+}
+.container .finish {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  padding: 15px;
+}
+.container .finish .good {
+  color: var(--main-color);
+}
+.container .finish .bad {
+  color: red;
+}
