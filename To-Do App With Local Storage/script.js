@@ -1,6 +1,6 @@
-let input = document.querySelector(".input");
-let submit = document.querySelector(".add");
-let tasksDiv = document.querySelector(".tasks");
+const input = document.querySelector(".input");
+const submit = document.querySelector(".add");
+const tasksDiv = document.querySelector(".tasks");
 
 // empty array tp store the tasks
 let arrayOfTasks = [];
@@ -13,12 +13,22 @@ if (window.localStorage.getItem("tasks")) {
 getDataFromLocalStorage();
 
 // Add Task
-submit.onclick = function () {
-  if (input.value !== "") {
+const addTask = () => {
+  if (input.value.trim() !== "") {
     addTaskToArray(input.value); // add task to array of tasks
     input.value = ""; // empty input field
   }
 };
+
+submit.addEventListener("click", () => {
+  addTask();
+});
+
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    submit.click();
+  }
+});
 
 // click on task element
 tasksDiv.addEventListener("click", (e) => {

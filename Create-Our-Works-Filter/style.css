@@ -6,6 +6,7 @@ body {
   justify-content: center;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
 }
 .switcher li {
   padding: 10px 15px;
@@ -24,7 +25,8 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
   margin: auto;
 }
 .gallery img {

@@ -17,18 +17,9 @@ body {
   left: 50%;
   top: 50%;
   z-index: -1;
-  animation: waving 10s ease-in-out infinite alternate;
   border-radius: 50%;
   transform: translateX(-50%) skew(0, -10deg);
-  -webkit-transform: translateX(-50%) skew(0, -10deg);
-  -moz-transform: translateX(-50%) skew(0, -10deg);
-  -ms-transform: translateX(-50%) skew(0, -10deg);
-  -o-transform: translateX(-50%) skew(0, -10deg);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  -webkit-animation: waving 10s ease-in-out infinite alternate;
+  animation: waving 10s ease-in-out infinite alternate;
 }
 .card {
   width: 300px;
@@ -41,22 +32,10 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd inset;
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .card img {
   max-width: 100%;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .card h2 {
   margin: 10px;
@@ -67,16 +46,8 @@ body {
 @keyframes waving {
   from {
     transform: translateX(-50%) skew(0, -10deg);
-    -webkit-transform: translateX(-50%) skew(0, -10deg);
-    -moz-transform: translateX(-50%) skew(0, -10deg);
-    -ms-transform: translateX(-50%) skew(0, -10deg);
-    -o-transform: translateX(-50%) skew(0, -10deg);
 }
   to {
     transform: translateX(-30%) skew(10deg, 0);
-    -webkit-transform: translateX(-30%) skew(10deg, 0);
-    -moz-transform: translateX(-30%) skew(10deg, 0);
-    -ms-transform: translateX(-30%) skew(10deg, 0);
-    -o-transform: translateX(-30%) skew(10deg, 0);
 }
 }

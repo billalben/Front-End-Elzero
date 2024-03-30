@@ -17,7 +17,6 @@ form > div {
 }
 form input[type="radio"] {
   appearance: none;
-  -webkit-appearance: none;
 }
 form label {
   position: relative;
@@ -42,7 +41,7 @@ form input[type="radio"]:not(:checked):hover + label::after {
   background-color: #0075ff;
   position: absolute;
   left: 4px;
-  top: 6px;
+  top: 4px;
 }
 form input[type="radio"]:not(:checked):hover + label::after {
   opacity: 0.2;

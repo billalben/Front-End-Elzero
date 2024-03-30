@@ -1,20 +1,24 @@
-let toggler = document.querySelector(".toggle");
-let nav = document.querySelector("nav");
-let closed = document.querySelector(".close");
+const toggler = document.querySelector(".toggle");
+const nav = document.querySelector("nav");
+const closed = document.querySelector(".close");
+const links = document.querySelectorAll(".item-link");
 
-toggler.onclick = function () {
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
+});
+
+toggler.addEventListener("click", () => {
   nav.classList.add("open");
-};
+});
 
+closed.addEventListener("click", () => {
+  nav.classList.remove("open");
+});
 
-
-closed.onclick = function () {
-  this.parentElement.classList.remove("open");
-};
-
-document.onkeyup = function (e) {
-  // console.log(e);
+document.addEventListener("keyup", (e) => {
   if (e.code === "Space") {
     nav.classList.remove("open");
   }
-};
+});

@@ -5,17 +5,13 @@ body {
   margin: 0;
   font-family: "Cairo", sans-serif;
   background-color: black;
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 div {
-  position: absolute;
-  left: 50%;
-  top: 50%;
   color: white;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  position: relative;
 }
 div span {
   font-size: 80px;
@@ -33,10 +29,10 @@ div::before {
   height: 100%;
   background-color: white;
   animation: move 4s linear infinite;
-  -webkit-animation: move 4s linear infinite;
 }
 @keyframes move {
-  0%, 100% {
+  0%,
+  100% {
     left: 0;
   }
   50% {

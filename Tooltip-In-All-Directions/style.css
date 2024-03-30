@@ -50,11 +50,16 @@ button:hover span {
   opacity: 1;
 }
 [data-position="bottom"] span {
-  top: auto;
   bottom: -60px;
 }
 [data-position="bottom"] span:before {
-  bottom: auto;
   top: -20px;
   border-color: transparent transparent #333;
+}
+[data-position="top"] span {
+  top: -60px;
+}
+[data-position="top"] span:before {
+  bottom: -20px;
+  border-color: #333 transparent transparent;
 }

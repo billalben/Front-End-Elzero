@@ -61,27 +61,28 @@ const words = [
 ];
 
 // settings levels
-const lvls = {
+// settings levels
+const levels = {
   Easy: 5,
   Normal: 3,
   Hard: 2,
 };
 
 // default level
-let defaultLevelName = "Normal";
-let defaultLevelSeconds = lvls[defaultLevelName];
+let defaultLevelName = "Easy";
+let defaultLevelSeconds = levels[defaultLevelName];
 
 // catch selector
-let startButton = document.querySelector(".start");
-let lvlNameSpan = document.querySelector(".message .lvl");
-let secondsSpan = document.querySelector(".message .seconds");
-let theWord = document.querySelector(".the-word");
-let upcomingWords = document.querySelector(".upcoming-words");
-let input = document.querySelector(".input");
-let timeLeftSpan = document.querySelector(".time span");
-let scoreGot = document.querySelector(".score .got");
-let scoreTotal = document.querySelector(".score .total");
-let finishMessage = document.querySelector(".finish");
+const startButton = document.querySelector(".start");
+const lvlNameSpan = document.querySelector(".message .lvl");
+const secondsSpan = document.querySelector(".message .seconds");
+const theWord = document.querySelector(".the-word");
+const upcomingWords = document.querySelector(".upcoming-words");
+const input = document.querySelector(".input");
+const timeLeftSpan = document.querySelector(".time span");
+const scoreGot = document.querySelector(".score .got");
+const scoreTotal = document.querySelector(".score .total");
+const finishMessage = document.querySelector(".finish");
 
 // setting level name + seconds + score
 lvlNameSpan.innerHTML = defaultLevelName;
@@ -124,6 +125,7 @@ function generateWords() {
   // call start play function
   startPlay();
 }
+
 function startPlay() {
   timeLeftSpan.innerHTML = defaultLevelSeconds;
   let start = setInterval(() => {
@@ -150,8 +152,7 @@ function startPlay() {
           // remove upcoming words box
           upcomingWords.remove();
         }
-      }
-      else {
+      } else {
         let span = document.createElement("span");
         span.className = "bad";
         let spanTxt = document.createTextNode("Game Over");

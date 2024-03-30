@@ -1,29 +1,34 @@
-// The End Of The Year Date To Countdown To
-// 1000 milliseconds = 1 Second
+const $days = document.querySelector(".days");
+const $hours = document.querySelector(".hours");
+const $minutes = document.querySelector(".minutes");
+const $seconds = document.querySelector(".seconds");
 
-let countDownDate = new Date("Dec 31, 2023 23:59:59").getTime();
-// console.log(countDownDate);
+// const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+const countDownDate = new Date("Mar 30, 2024 14:01:59").getTime();
 
-let counter = setInterval(() => {
-  // Get Date Now
-  let dateNow = new Date().getTime();
+function updateTimer() {
+  const dateNow = new Date().getTime();
+  const dateDifference = countDownDate - dateNow;
 
-  // Find The Date Difference Between Now And Countdown Date
-  let dateDiff = countDownDate - dateNow;
+  const days = Math.floor(dateDifference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((dateDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((dateDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((dateDifference % (1000 * 60)) / 1000);
 
-  // Get Time Units
-  // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
-  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+  $days.textContent = days.toString().padStart(2, "0");
+  $hours.textContent = hours.toString().padStart(2, "0");
+  $minutes.textContent = minutes.toString().padStart(2, "0");
+  $seconds.textContent = seconds.toString().padStart(2, "0");
 
-  document.querySelector(".days").textContent = days < 10 ? `0${days}` : days;
-  document.querySelector(".hours").textContent = hours < 10 ? `0${hours}` : hours;
-  document.querySelector(".minutes").textContent = minutes < 10 ? `0${minutes}` : minutes;
-  document.querySelector(".seconds").textContent = seconds < 10 ? `0${seconds}` : seconds;
-
-  if (dateDiff <= 1000) {
+  if (dateDifference <= 1000) {
+    console.log("Countdown finished");
     clearInterval(counter);
+
+    $days.textContent = "00";
+    $hours.textContent = "00";
+    $minutes.textContent = "00";
+    $seconds.textContent = "00";
   }
-}, 1000);
+}
+
+const counter = setInterval(updateTimer, 1000);

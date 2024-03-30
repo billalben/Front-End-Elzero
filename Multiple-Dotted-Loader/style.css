@@ -17,12 +17,7 @@ body {
   top: 50%;
   margin-top: -75px;
   margin-left: -75px;
-  animation:rotate-right 2s linear infinite;
-  -webkit-animation:rotate-right 2s linear infinite;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  animation: rotate-right 2s linear infinite;
 }
 .dotted-loader::before {
   content: "";
@@ -39,41 +34,21 @@ body {
   border-style: solid dotted;
   animation: rotate-left 1s linear infinite;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  -webkit-animation: rotate-left 1s linear infinite;
 }
 @keyframes rotate-right {
   from {
     transform: rotate(1turn);
-    -webkit-transform: rotate(1turn);
-    -moz-transform: rotate(1turn);
-    -ms-transform: rotate(1turn);
-    -o-transform: rotate(1turn);
-}
+  }
   to {
     /*transform: rotate(360deg);*/
     transform: rotate(0);
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -ms-transform: rotate(0);
-    -o-transform: rotate(0);
-}
+  }
 }
 @keyframes rotate-left {
   from {
     transform: rotate(0);
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -ms-transform: rotate(0);
-    -o-transform: rotate(0);
-}
+  }
   to {
     transform: rotate(1turn);
-    -webkit-transform: rotate(1turn);
-    -moz-transform: rotate(1turn);
-    -ms-transform: rotate(1turn);
-    -o-transform: rotate(1turn);
+  }
 }

@@ -1,25 +1,26 @@
-let switcherListItems = document.querySelectorAll(".switcher li");
-let imgs = Array.from(document.images);
+const switcherListItems = document.querySelectorAll(".switcher li");
+const imgs = Array.from(document.images);
 
-console.log(switcherListItems);
+let $lastActiveItem = switcherListItems[0];
 
 switcherListItems.forEach((li) => {
-  li.addEventListener("click", removeActive);
-  li.addEventListener("click", manageImgs);
+  li.addEventListener("click", () => {
+    removeActive(li);
+    manageImgs(li.dataset.category);
+  });
 });
 
-function removeActive() {
-  switcherListItems.forEach((li) => {
-    li.classList.remove("active");
-    this.classList.add("active");
-  });
+function removeActive(li) {
+  $lastActiveItem.classList.remove("active");
+  li.classList.add("active");
+  $lastActiveItem = li;
 }
 
-function manageImgs() {
+function manageImgs(category) {
   imgs.forEach((img) => {
     img.style.display = "none";
   });
-  document.querySelectorAll(this.dataset.cat).forEach((el) => {
+  document.querySelectorAll(category).forEach((el) => {
     el.style.display = "block";
   });
 }
